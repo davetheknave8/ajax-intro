@@ -7,16 +7,6 @@ function onReady() {
     //that Promise says that when the server responds
     //we do the thing in the `then`
     getAllMovies();
-    $.ajax({
-        method: 'GET',
-        url: '/movies'
-    }).then( function (response){
-        console.log(`Got some movies!!!`, response);
-        renderMovies(response);
-    }).catch( function(error){
-        console.log(`Something bad happened... `);
-        alert('Something bad happened. Try again later.');
-    })
     //we don't wait for the server to respond before moving on
     //to run this next line of code, we just do the requesting
     console.log('down here');
