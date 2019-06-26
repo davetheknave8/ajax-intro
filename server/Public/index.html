@@ -10,19 +10,31 @@
 </head>
 <body>
     <header><h1>Ajax Intro</h1></header>
+    <main>
+        <section>
+            <h2>Add a Movie</h2>
+            <label>Name: </label>
+            <input type="text" id="in-name" />
+            <br />
+            <label>Movie: </label>
+            <input type="text" id="in-movie" />
+            <br />
+            <button id="add-movie">Save</button>
+        </section>
+        <section>
+            <h2>Favorite Movies</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Playfairians</th>
+                        <th>Movie</th>
+                    </tr>
+                </thead>
+                <tbody id="movies">
+                    <!-- jQuery will fill this in -->
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
-<main>
-    <h2>Favorite Movies</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Playfairians</th>
-                <th>Movie</th>
-            </tr>
-        </thead>
-        <tbody id="movies">
-            <!-- jQuery will fill this in -->
-        </tbody>
-    </table>
-</main>
 </html>
