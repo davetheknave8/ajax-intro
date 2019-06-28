@@ -11,20 +11,10 @@ app.use( express.static( 'server/public'));
 let bodyParser = require('body-parser');
 app.use( bodyParser.urlencoded( {extended: true} ))
 
-//Setup route to return movies
-const movieData = require('./modules/movie.module.js')
-app.get( '/movies', (req, res) => {
-    res.send(movieData);
-})
+//Configure Routers
+const movieRouter = require('./routers/movie.router');
+app.use('/movies', movieRouter);
 
-//Post new movie to server
-app.post( '/movies', (req, res) => {
-    let newMovie = req.body;
-    console.log(`Adding the movie: ${newMovie}`)
-    //Add it onto the array of movies
-    movieData.push(newMovie);
-    res.sendStatus(201);
-})
 //Start the server listening - do this last, after setting up routes, and all the things
 const PORT = 5000;
 app.listen( PORT, () => {
